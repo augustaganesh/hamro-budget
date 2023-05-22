@@ -1,0 +1,94 @@
+:root {
+    --primary: #1B262C;
+    --secondary: #1B262C;
+    --info-light: #BBE1FA;
+    --text: #1B262C;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.centered {
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: start;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: end;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.navbar {
+    background-color: var(--primary);
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.navbar .nav-link {
+    color: #e9e9e9;
+}
+
+/* banner start  */
+
+
+.hero-header {
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.hero-header img {
+    animation: shake 5s linear infinite;
+}
+
+
+@keyframes shake {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.sect-banner {
+    background-color: #000;
+    height: 50vh;
+}
+
+.banner-content button {
+    border: 0;
+    background-color: var(--secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    color: #e9e9ff;
+}
