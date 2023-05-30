@@ -10,6 +10,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body{
+    min-height: 100vh;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -42,6 +46,13 @@ html {
 
 .navbar {
     background-color: var(--primary);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+section {
+    margin-top: 4rem;
 }
 
 .navbar .navbar-brand {
@@ -70,15 +81,17 @@ html {
 
 @keyframes shake {
     0% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
+
     50% {
-      transform: translateY(-10px);
+        transform: translateY(-10px);
     }
+
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  }
+}
 
 .sect-banner {
     background-color: #000;
@@ -92,3 +105,49 @@ html {
     border-radius: 8px;
     color: #e9e9ff;
 }
+
+/********* form css ****************
+################################## */
+.form-bg {
+    background-color: #fff;
+    padding: 36px;
+    border-radius: 8px;
+    font-family: Poppins, sans-serif;
+}
+
+.form-ui label {
+    font-weight: 600;
+    margin-bottom: 0.65rem;
+}
+
+.form-ui :is(label, input, select, textarea) {
+    font-size: 15px;
+}
+
+.form-ui :is(input, select, textarea) {
+    border-color: #444;
+    border-radius: 8px;
+}
+
+.form-ui .form-group {
+    margin-bottom: 32px;
+}
+
+.form-ui :is(input, select) {
+    height: 44px;
+}
+
+.form-ui textarea {
+    padding-top: 0.7rem;
+}
+
+/* select arrow right padding  */
+.form-ui select {
+    border-right: 9px solid #fff
+}
+
+.form-ui select:focus {
+    border-right-color: #fff
+}
+
+/* end  */
