@@ -29,6 +29,10 @@ body {
     align-items: center;
 }
 
+.cp {
+    cursor: pointer;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -149,11 +153,11 @@ section {
 }
 
 /* select arrow right padding  */
-.form-ui select {
+.form-ui.form-bg select {
     border-right: 9px solid #fff
 }
 
-.form-ui select:focus {
+.form-ui.form-bg select:focus {
     border-right-color: #fff
 }
 

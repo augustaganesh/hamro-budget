@@ -42,16 +42,3 @@
 }
 
 /* end  */
-
-/* form input range  */
-.form-range::-webkit-slider-runnable-track {
-    background-color: blue !important;
-}
-
-.form-range::-moz-range-track {
-    background-color: blue !important;
-}
-
-.form-range::-ms-track {
-    background-color: blue !important;
-}

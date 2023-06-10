@@ -8,7 +8,7 @@ include('../../include/navbar.php');
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-4">
                 <div class="card">
                     <div class="card-header">
                         <h4>Bagmati</h4>
@@ -30,7 +30,7 @@ include('../../include/navbar.php');
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-4">
                 <div class="card">
                     <div class="card-header">
                         <h4>Gandaki</h4>
@@ -51,7 +51,7 @@ include('../../include/navbar.php');
             </div>
 
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-4">
                 <div class="card">
                     <div class="card-header">
                         <h4>Lumbini</h4>
@@ -70,7 +70,7 @@ include('../../include/navbar.php');
             </div>
 
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-4">
                 <div class="card">
                     <div class="card-header">
                         <h4>Karnali</h4>
@@ -88,7 +88,7 @@ include('../../include/navbar.php');
             </div>
 
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-4">
                 <div class="card">
                     <div class="card-header">
                         <h4>Sudurpashchim</h4>
