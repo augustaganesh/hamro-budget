@@ -1,13 +1,14 @@
 <?php
 include('../config/config.php');
-$title =  "Admin Login";
+$title =  "State";
+$whoUser = "Bagmati State";
 include('../include/header.php');
 include('../include/navbar.php');
 ?>
 
 <!-- Modal -->
 <div class="modal fade" id="db" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <form class="form-ui" action="<?= base_url('admin/index.php') ?>" autocomplete="">
                 <div class="modal-header">
@@ -15,111 +16,45 @@ include('../include/navbar.php');
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">State<span>*</span></label>
-                                <select name="" id="" class="form-control">
-                                    <option value="" selected>Select State</option>
-                                    <option value="Bagmati">Bagmati</option>
-                                    <option value="Gandaki">Gandaki</option>
-                                    <option value="Karnali">Karnali</option>
-                                    <option value="Province No. 1">Province No. 1</option>
-                                    <option value="Province No. 2">Province No. 2</option>
-                                    <option value="Province No. 3">Province No. 3</option>
-                                    <option value="Province No. 5">Province No. 5</option>
-                                    <option value="Sudurpashchim">Sudurpashchim</option>
-                                </select>
-                            </div>
+                    <label for="">Your Total Budget</label>
+                    <div class="progress mb-3 d-flex align-items-center">
+                        <div class="progress-bar bg-success text-white text-end pe-3" role="progressbar" style="width: 100%;height:56px" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" disabled>
+                            <strong class="my-auto fw-bold">Rs. <span id="total_budget">3560705000</span>.00 /-</strong>
                         </div>
+                    </div>
 
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">District<span>*</span></label>
-                                <select name="" id="" class="form-control">
-                                    <option value="" selected>Select District</option>
-                                    <option value="Bhaktapur">Bhaktapur</option>
-                                    <option value="Dhading">Dhading</option>
-                                    <option value="Kathmandu">Kathmandu</option>
-                                    <option value="Kavrepalanchok">Kavrepalanchok</option>
-                                    <option value="Lalitpur">Lalitpur</option>
-                                    <option value="Nuwakot">Nuwakot</option>
-                                    <option value="Rasuwa">Rasuwa</option>
-                                    <option value="Sindhupalchok">Sindhupalchok</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="">Fiscal Year<span>*</span></label>
+                        <input type="text" disabled name="fiscal_year" class="form-control" id="fiscal_this_year" required>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="">State<span>*</span></label>
+                        <select name="" id="state" class="form-control" required>
+                            <option value="" selected>Select State</option>
+                            <option value="Bagmati">Bagmati</option>
+                            <option value="Gandaki">Gandaki</option>
+                            <option value="Karnali">Karnali</option>
+                            <option value="Province No. 1">Province No. 1</option>
+                            <option value="Province No. 2">Province No. 2</option>
+                            <option value="Province No. 3">Province No. 3</option>
+                            <option value="Province No. 5">Province No. 5</option>
+                            <option value="Sudurpashchim">Sudurpashchim</option>
+                        </select>
+                    </div>
 
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="">Municipality(Rural-Metro)<span>*</span></label>
-                                <select name="" id="" class="form-control">
-                                    <option value="" selected>Select Municipality/Rural Municipality</option>
-                                    <option value="Bidur MP">Bidur Municipality</option>
-                                    <option value="Belkotgadhi MP">Belkotgadhi Municipality</option>
-                                    <option value="Likhu">Likhu</option>
-                                    <option value="Tarakeshwar">Tarakeshwar</option>
-                                    <option value="Tadi">Tadi</option>
-                                    <option value="Dupcheshwar">Dupcheshwar</option>
-                                    <option value="Panchakanya">Panchakanya</option>
-                                    <option value="Kispang">Kispang</option>
-                                    <option value="Shivapuri">Shivapuri</option>
-                                    <option value="Likhu Tamakoshi">Likhu Tamakoshi</option>
-                                    <option value="Suryagadhi">Suryagadhi</option>
-                                    <option value="Bidur">Bidur</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="" class="mb-0">Budget Amount <span id="selected_date"></span></label>
+                        <input type="range" class="form-range custom-range" id="progress-slider" min="1" max="3560705000" value="0">
 
-                        <div class="form-group">
-                            <style>
-                                .progress-bar {
-                                    width: 100%;
-                                    height: 30px;
-                                    background-color: #f2f2f2;
-                                    border-radius: 4px;
-                                }
+                        <strong> Rs. <input type="number" class="border-0 px-2 fw-bold" name="" id="progress-text" required>
+                        </strong>
 
-                                .progress {
-                                    height: 100%;
-                                    background-color: #4CAF50;
-                                    border-radius: 4px;
-                                    transition: width 0.3s ease-in-out;
-                                }
-
-                                .progress-text {
-                                    color: #000;
-                                    text-align: center;
-                                    line-height: 30px;
-                                }
-                            </style>
-
-                            <input type="range" id="progress-slider" min="1" max="500" value="0">
-
-                            <div class="progress-bar">
-                                <div id="progress" class="progress"></div>
-                            </div>
-                            <div id="progress-text" class="progress-text">0%</div>
-
-                            <script>
-                                // JavaScript to update the progress bar based on the slider value
-                                var progressSlider = document.getElementById('progress-slider');
-                                var progressBar = document.getElementById('progress');
-                                var progressText = document.getElementById('progress-text');
-
-                                progressSlider.addEventListener('input', function() {
-                                    var progress = progressSlider.value;
-                                    progressBar.style.width = progress + '%';
-                                    progressText.textContent = progress + '%';
-                                });
-                            </script>
-
-                        </div>
+                        <span id="budgetDistributeError"></span>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Distribute</button>
+                    <button type="submit" class="btn btn-success">Distribute</button>
                 </div>
             </form>
         </div>
@@ -137,23 +72,6 @@ include('../include/navbar.php');
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-header">
-                        <h4>States</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="flex-between">
-                            <div>
-                                <p>7</p>
-                            </div>
-                            <div><a href="<?= base_url('admin/pages/view_states.php') ?>">View Details <i class="fas fa-arrow-right"></i></a></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
                         <h4>Districts</h4>
                     </div>
                     <div class="card-body">
@@ -168,79 +86,7 @@ include('../include/navbar.php');
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <table class="table table-responsive w-100">
-                    <thead>
-                        <tr>
-                            <th scope="col">Zones</th>
-                            <th scope="col">GDP</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mechi</td>
-                            <td>3.32</td>
-                        </tr>
-                        <tr>
-                            <td>Koshi</td>
-                            <td>4.12</td>
-                        </tr>
-                        <tr>
-                            <td>Sagarmatha</td>
-                            <td>5.20</td>
-                        </tr>
-                        <tr>
-                            <td>Janakpur</td>
-                            <td>2.78</td>
-                        </tr>
-                        <tr>
-                            <td>Bagmati</td>
-                            <td>7.50</td>
-                        </tr>
-                        <tr>
-                            <td>Narayani</td>
-                            <td>4.92</td>
-                        </tr>
-                        <tr>
-                            <td>Gandaki</td>
-                            <td>3.89</td>
-                        </tr>
-                        <tr>
-                            <td>Lumbini</td>
-                            <td>2.97</td>
-                        </tr>
-                        <tr>
-                            <td>Dhaulagiri</td>
-                            <td>1.56</td>
-                        </tr>
-                        <tr>
-                            <td>Rapti</td>
-                            <td>2.05</td>
-                        </tr>
-                        <tr>
-                            <td>Karnali</td>
-                            <td>1.78</td>
-                        </tr>
-                        <tr>
-                            <td>Bheri</td>
-                            <td>1.32</td>
-                        </tr>
-                        <tr>
-                            <td>Seti</td>
-                            <td>1.89</td>
-                        </tr>
-                        <tr>
-                            <td>Mahakali</td>
-                            <td>0.95</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-
-
-            <div class="col-lg-12 d-nonee">
+            <div class="col-lg-12 d-none">
                 <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" mapsvg:geoViewBox="80.051163 30.431317 88.193593 26.348125" width="800.36517" height="454.28867">
                     <path d="m 507.66161,235.81836 3.61,5.49 4.8,-0.38 3.96,-1.72 0.53,1.07 3.23,0.86 4.33,-4.08 3.57,-1.28 6.95,0.5 5.89,2.92 3.74,5.22 2.57,0.1 7.37,6.1 1.2,0.06 2.64,-1.43 12.28,10.52 1.56,3.25 0.12,3.11 5.1,8.31 0.23,1.91 -1.25,1.84 0.22,1.1 7.41,3.06 3.43,0.28 0,0 -1.45,5.86 -3.37,2.7 2.78,9.52 -0.24,2.94 -7.7,0.77 -2.21,2.77 -1.36,4.24 -3.03,4.27 -1.4,3.58 -3.2,1.33 -2.4,2.26 0.65,11.94 -6.4,4.49 -2.52,-0.53 -2.13,0.94 -0.03,3.29 -2.45,3.71 -5.85,-0.95 -2.02,0.33 -3.07,-0.83 -2.91,-1.84 -5.81,-1.44 0,0 -4.41,-2.27 -12.89,-4.27 -5.74,-4.18 -0.92,-7.39 0.71,-1.87 -1.45,-1.98 -1.74,-7.71 -1.55,-2.48 -6.02,-0.79 -9.95,-4.19 -6.89,1.85 -2.79,1.72 -3.74,-1.84 -2.49,3.44 -2.53,-0.31 -1.26,-0.86 -3.09,0.45 -1.77,-1.22 -0.4,-2.43 -2.73,-1.17 -0.86,-1.26 -4.3,0.91 -8.26,-1.68 -0.3,-1.47 2.53,-3.24 -0.81,-1.63 0.45,-1.42 2.85,-3.18 0,0 3.69,3.44 2.13,-0.3 3.14,-1.93 0.36,-1.93 -1.87,-9.74 2.23,-3.45 4.07,-3.66 0.86,-3.96 1.84,-1.57 1.27,-5.24 2.24,-1.01 1.62,0.61 1.88,-0.6 1.02,0.35 1.23,-2.43 3.25,-2.54 0.48,-6.92 1.17,-3 3.37,-2.18 1.58,-2.59 0.63,-3.72 1.99,-2.08 4.72,-1.64 0,0 3.78,1.13 4.63,-1.92 z" title="Bagmati" id="NP-BA" />
                     <path d="m 148.37161,147.36836 2.21,0.72 -2.04,4.21 0.47,2.5 1.76,0.52 2.05,1.9 5.95,-1.79 2.94,0.75 1.98,3.49 8.9,1.12 1.85,2.52 3.07,1.78 4.14,-2.66 2.99,0.96 3.36,-1.05 2,-2 2.72,0.15 4.79,3.38 3.03,0.35 2.79,-1.5 1.2,-3.77 3.24,-4.43 12.42,-7.08 6.18,0.96 5.18,-0.1 1.14,0.9 -0.84,1.76 -0.18,9.45 2.03,1.6 6.73,-2.12 7.37,2.21 0,0 -5.08,2.98 -0.39,6.57 -2.56,2.87 -9.02,4.88 -4.74,6.28 -3.85,-0.59 -2.59,3.38 0.6,4.34 -2.37,1.63 -5.42,2.1 -2.44,8.08 -11.7,-2.77 -2.41,-0.15 -2.12,1.07 -1.23,4.52 2.04,4.61 0.35,4.23 -2.45,4.39 -3,2.62 1.57,4.3 -0.16,2.15 -5.25,6.29 -2.6,-0.1 -7.04,-4.88 -4.78,-1.68 -3.19,2.99 0.18,1.06 -1.26,2.63 0.19,1.58 3.49,3.13 1.48,2.26 4.01,-0.4 2.67,1.21 0.13,1.01 1.86,1.49 2.05,0.26 1.7,1.33 0.62,2.43 8.08,4.15 1.39,3.17 3.4,4.36 7.97,2.37 0.84,3.7 2.04,0.36 1.51,1.75 -0.07,3.71 1.09,1.35 -0.28,3.56 -4.59,-0.92 -2.21,0.91 -3.6,0.18 -2.66,1.79 0,0 -9.63,-0.37 -4.67,7.63 -3.86,-0.15 -5.44,-4.39 -2.8,-0.54 -10.47,-9.6 -3.12,-0.18 -3.51,-1.37 -14.84,-8.7 0.22,-3.64 -2.25,-1.81 -1.09,-2.9 -2.07,-1.61 -4.7,-0.24 -0.78,0.87 0.6,2.22 -5.88,1.09 0.89,-2.39 -0.91,0.21 -1.19,-1 1.97,-0.76 -0.68,-3.43 -7.87,-8.78 -0.33,-4.94 -2.11,-3.56 -11.04,-2.26 -3.600005,-2.26 0,0 2.510005,-3.47 0.57,-3.24 3.05,-1.87 4.92,-4.59 3.64,-4.55 0.88,-3.19 7.28,-8.13 -0.4,-3.11 -3.92,-6.75 -1.34,-4.01 -1.12,-6.83 -2.19,0.58 -2.48,4.22 -3.29,-2.21 -0.04,-3.08 -6.4,-1.6 -5.450005,-2.71 -3.46,-5.74 7.51,-2.48 3.330005,-0.05 11.21,6.65 8.16,0.69 5.29,-1.17 1.65,2.05 2.83,-1.25 2.52,0.24 2.13,-0.73 3.51,6.83 6.05,6.35 0.58,2.39 2.01,0.92 2.59,-0.84 -1.06,-3.45 -2.25,-1.73 -1.16,-3.56 -5.49,-6.32 -0.91,-3.3 -3.38,-3.66 -0.03,-6.77 3.62,-4.92 8.23,-4.99 z" title="Bheri" id="NP-BH" />
@@ -264,6 +110,50 @@ include('../include/navbar.php');
     </div>
 </section>
 
+<script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    var state = document.getElementById('state');
+    state.addEventListener("change", budgetF);
+
+    function budgetF(event) {
+        var inputValue = event.target.value;
+        document.getElementById('selected_date').innerText = "for " + inputValue;
+    }
+
+    // display the slided budget from the total budget 
+    var totalBudget = parseInt(document.getElementById('total_budget').innerText);
+    var progressSlider = document.getElementById('progress-slider');
+    var progressText = document.getElementById('progress-text');
+
+    progressSlider.addEventListener('input', function() {
+        var value = parseInt(progressSlider.value);
+        var amount = (value / totalBudget) * totalBudget;
+        var roundedAmount = Math.round(amount / 100) * 100;
+        progressText.value = roundedAmount.toFixed(2);
+    });
+
+    progressText.addEventListener('input', function() {
+        var enteredValue = parseFloat(progressText.value);
+        if (enteredValue > totalBudget) {
+            progressText.value = totalBudget.toFixed(2);
+            enteredValue = totalBudget;
+        }
+        var sliderValue = (enteredValue / totalBudget) * totalBudget;
+        var roundedAmount = Math.round(sliderValue / 100) * 100;
+
+        progressSlider.value = roundedAmount.toFixed(2);
+    });
+
+    // display current fiscal year 
+    const currentYear = NepaliFunctions.GetCurrentBsDate().year;
+    const nextYear = currentYear + 1;
+    const yearFiscalRange = `${currentYear}/${nextYear}`;
+    // console.log(yearFiscalRange);
+
+    document.getElementById('fiscal_this_year').value = yearFiscalRange;
+</script>
 
 <?php
 include('../include/footer.php');

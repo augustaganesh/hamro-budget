@@ -7,7 +7,7 @@ include('../include/navbar.php');
 
 <!-- Modal -->
 <div class="modal fade" id="db" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <form class="form-ui" action="<?= base_url('admin/index.php') ?>" autocomplete="">
                 <div class="modal-header">
@@ -18,7 +18,7 @@ include('../include/navbar.php');
                     <label for="">Total Budget</label>
                     <div class="progress mb-3 d-flex align-items-center">
                         <div class="progress-bar bg-success text-white text-end pe-3" role="progressbar" style="width: 100%;height:56px" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" disabled>
-                            <strong class="my-auto fw-bold">Rs. <span id="total_budget">17000</span>.00 /-</strong>
+                            <strong class="my-auto fw-bold">Rs. <span id="total_budget">18756800000</span>.00 /-</strong>
                         </div>
                     </div>
 
@@ -29,7 +29,7 @@ include('../include/navbar.php');
 
                     <div class="form-group">
                         <label for="">State<span>*</span></label>
-                        <select name="" id="state" class="form-control">
+                        <select name="" id="state" class="form-control" required>
                             <option value="" selected>Select State</option>
                             <option value="Bagmati">Bagmati</option>
                             <option value="Gandaki">Gandaki</option>
@@ -44,16 +44,16 @@ include('../include/navbar.php');
 
                     <div class="form-group">
                         <label for="" class="mb-0">Budget Amount <span id="selected_date"></span></label>
-                        <input type="range" class="form-range custom-range" id="progress-slider" min="1" max="17000" value="0">
+                        <input type="range" class="form-range custom-range" id="progress-slider" min="1" max="18756800000" value="0">
 
-                        <strong> Rs. <input type="number" class="border-0 px-2 fw-bold" name="" id="progress-text" max="17000" required>
+                        <strong> Rs. <input type="number" class="border-0 px-2 fw-bold" name="" id="progress-text" required>
                         </strong>
 
                         <span id="budgetDistributeError"></span>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Distribute</button>
+                    <button type="submit" class="btn btn-success">Distribute</button>
                 </div>
             </form>
         </div>
