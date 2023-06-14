@@ -6,6 +6,6 @@ if (!function_exists('base_url')) {
         $path = trim($path, '/');
         $http = $_SERVER['REQUEST_SCHEME'];
         $serverName = $_SERVER['HTTP_HOST'];
-        return $http . '://' . $serverName . '/hamro-budget/' . $path;
+        return $http . '/' . $path;
     }
 }
